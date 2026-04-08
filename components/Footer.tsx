@@ -5,6 +5,8 @@ const footerLinks = [
   { label: "App", href: APP_URL },
   { label: "X/Twitter", href: TWITTER_URL },
   { label: "GitHub", href: GITHUB_URL },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
 ] as const;
 
 export function Footer() {
@@ -24,8 +26,8 @@ export function Footer() {
                 key={link.href}
                 href={link.href}
                 className="focus-ring rounded-[8px] border border-white/[0.08] px-3 py-2 text-sm font-semibold text-muted transition hover:border-accent/30 hover:text-white"
-                target={link.href === APP_URL ? undefined : "_blank"}
-                rel={link.href === APP_URL ? undefined : "noreferrer"}
+                target={link.href.startsWith("https://") && link.href !== APP_URL ? "_blank" : undefined}
+                rel={link.href.startsWith("https://") && link.href !== APP_URL ? "noreferrer" : undefined}
               >
                 {link.label}
               </a>
