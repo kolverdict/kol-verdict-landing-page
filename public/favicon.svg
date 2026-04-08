@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KOL Verdict">
+  <rect width="64" height="64" rx="8" fill="#080b0c"/>
+  <path d="M16 18h32v8H34v7h12v8H34v11h-8V26H16z" fill="#30ff6f"/>
+  <path d="M17 50h30" stroke="#30ff6f" stroke-width="5" stroke-linecap="square"/>
+</svg>
