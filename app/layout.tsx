@@ -16,7 +16,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const description =
-  "Discover crypto KOL reputation, review claims, compare credibility signals, and move from noise to signal with KOL Verdict.";
+  "Don't trust KOLs. Verify them with community verdicts, signal checks, and on-chain context.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kolverdict.fun"),

@@ -36,33 +36,33 @@ const staggerContainer = {
 
 const stats = [
   { icon: Users, label: "KOLs Tracked", value: "2,500+" },
-  { icon: Activity, label: "Signals Analyzed", value: "1.2M+" },
-  { icon: Target, label: "Accuracy Score", value: "94%" },
+  { icon: Activity, label: "Votes Cast", value: "1.2M+" },
+  { icon: Target, label: "Community Accuracy", value: "94%" },
 ];
 
 const features = [
   {
     icon: Radio,
-    title: "Signal vs Noise",
-    desc: "Separate authentic data from promotional hype with proprietary filtering algorithms.",
+    title: "Cut Through the Noise",
+    desc: "Filter hype, ads, and paid shills. See what actually matters.",
   },
   {
     icon: Database,
-    title: "On-chain Behavior",
-    desc: "Analyze wallet interactions and transaction history for true intent and consistency.",
+    title: "Backed by Behavior",
+    desc: "Track patterns, signals, and on-chain behavior to see if actions match words.",
   },
   {
     icon: ShieldCheck,
-    title: "Reputation Scoring",
-    desc: "Receive a comprehensive trust score based on multi-factor historical performance.",
+    title: "Crowd + Signal Score",
+    desc: "A live reputation score shaped by community verdicts and supporting signals.",
   },
 ];
 
 const signalItems = [
-  "Historical ROI tracking",
-  "Wallet interaction analysis",
-  "Community sentiment scoring",
-  "Automated scam detection",
+  "Crowd sentiment snapshots",
+  "Endorse and reject vote flow",
+  "On-chain behavior context",
+  "Claim history and corrections",
 ];
 
 const chartBars = [40, 60, 45, 70, 55, 80, 65, 90];
@@ -170,16 +170,16 @@ export default function Home() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#bef264] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#bef264]" />
             </span>
-            Live On-Chain Analysis
+            Crowd Verdict + Signals
           </motion.div>
 
           <motion.h1
             {...fadeIn}
             className="mb-8 text-5xl font-bold leading-[1.1] tracking-tight md:text-7xl"
           >
-            Read the signal <br />
+            Don&apos;t trust KOLs. <br />
             <span className="bg-gradient-to-r from-[#bef264] to-white/50 bg-clip-text text-transparent">
-              before the narrative.
+              Verify them.
             </span>
           </motion.h1>
 
@@ -188,7 +188,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl"
           >
-            Evaluate crypto KOL credibility with data-driven signals and on-chain behavioral analysis. Navigate the noise with confidence.
+            See what the crowd thinks. Back it with real signals. No hype. No paid narratives.
           </motion.p>
 
           <motion.div
@@ -200,7 +200,7 @@ export default function Home() {
               href={APP_URL}
               className="w-full rounded-full bg-[#bef264] px-8 py-4 text-lg font-bold text-black shadow-[0_0_30px_rgba(190,242,100,0.3)] transition-all hover:scale-105 hover:bg-[#a3e635] active:scale-95 sm:w-auto"
             >
-              Open App
+              Check a KOL
             </a>
             <a
               href={LEADERBOARD_URL}
@@ -247,10 +247,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-20 text-center">
             <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
-              Built for the next generation of traders.
+              Reputation, not just reach.
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              We combine proprietary filtering algorithms with real-time on-chain data to give you the ultimate edge.
+              See what people really think, then check whether the behavior backs the story.
             </p>
           </div>
 
@@ -288,11 +288,11 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <h2 className="mb-8 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-                Real-time transparency <br />
-                <span className="text-[#bef264]">into every signal.</span>
+                See whether behavior <br />
+                <span className="text-[#bef264]">backs the narrative.</span>
               </h2>
               <p className="mb-10 text-lg leading-relaxed text-gray-400">
-                Our dashboard provides a deep dive into KOL performance, tracking every call from inception to execution. No more hidden deletes or fake gains.
+                Crowd sentiment gives the read. Signals and on-chain context show whether the story holds up.
               </p>
               <ul className="space-y-4">
                 {signalItems.map((item) => (
@@ -324,16 +324,16 @@ export default function Home() {
                     <ShieldCheck className="h-5 w-5 fill-blue-500/10 text-blue-500" />
                   </h3>
                   <div className="mt-2 rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-500">
-                    Trust score <span className="ml-1 text-green-600">92</span>
+                    Verdict score <span className="ml-1 text-green-600">92</span>
                   </div>
                 </div>
 
                 <div className="mb-6 rounded-2xl bg-gray-50 p-4">
                   <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                    Latest Signal
+                    Signal Check
                   </p>
                   <p className="text-sm font-bold">
-                    Bullish on L2s - <span className="text-green-600">Verified</span>
+                    Bullish on L2s - <span className="text-green-600">Signal-backed</span>
                   </p>
                 </div>
 
@@ -396,14 +396,14 @@ export default function Home() {
           <div className="absolute inset-0 opacity-0 transition-opacity group-hover:bg-black group-hover:opacity-5" />
           <div className="relative z-10">
             <h2 className="mb-8 text-4xl font-bold tracking-tight md:text-6xl">
-              Ready to see the signal? <br />
-              Start using KOL Verdict today.
+              Stop guessing. <br />
+              Start verifying.
             </h2>
             <a
               href={APP_URL}
               className="inline-flex rounded-full bg-black px-10 py-5 text-xl font-bold text-white shadow-2xl transition-all hover:scale-105 active:scale-95"
             >
-              Get Started
+              Check Your First KOL
             </a>
           </div>
         </div>
@@ -420,7 +420,7 @@ export default function Home() {
                 <span className="text-xl font-bold tracking-tight">KOL Verdict</span>
               </div>
               <p className="max-w-xs leading-relaxed text-gray-500">
-                The industry standard for KOL credibility and on-chain behavioral analysis.
+                Community verdicts and signal checks for people who want more than hype.
               </p>
             </div>
             <div>
@@ -476,7 +476,7 @@ export default function Home() {
                 Privacy Policy
               </Link>
               <Link href="/terms-and-conditions" className="transition-colors hover:text-white">
-                Terms of Service
+                Terms & Conditions
               </Link>
             </div>
           </div>

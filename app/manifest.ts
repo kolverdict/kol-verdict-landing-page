@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "KOL Verdict",
     short_name: "KOL Verdict",
     description:
-      "Crypto KOL reputation, claim review, and credibility signals.",
+      "Community verdicts, signal checks, and on-chain context for crypto KOLs.",
     start_url: "/",
     display: "standalone",
     background_color: "#080b0c",
