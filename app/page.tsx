@@ -18,7 +18,7 @@ import {
   Users,
   X,
 } from "lucide-react";
-import { APP_URL, LEADERBOARD_URL } from "@/lib/site-data";
+import { APP_URL, LEADERBOARD_URL, TWITTER_URL } from "@/lib/site-data";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -457,8 +457,13 @@ export default function Home() {
               <h5 className="mb-6 font-bold">Social</h5>
               <ul className="space-y-4 text-sm text-gray-500">
                 <li>
-                  <a href="#resources" className="transition-colors hover:text-[#bef264]">
-                    Contact
+                  <a
+                    href={TWITTER_URL}
+                    className="transition-colors hover:text-[#bef264]"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    X / Twitter
                   </a>
                 </li>
                 <li>
