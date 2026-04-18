@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 type LogoProps = {
@@ -6,8 +7,8 @@ type LogoProps = {
 
 export function Logo({ compact = false }: LogoProps) {
   return (
-    <a
-      href="#top"
+    <Link
+      href="/"
       className="focus-ring group inline-flex items-center gap-2.5 rounded-[8px]"
       aria-label="KOL Verdict home"
     >
@@ -29,6 +30,6 @@ export function Logo({ compact = false }: LogoProps) {
           Verdict Engine
         </span>
       </span>
-    </a>
+    </Link>
   );
 }
