@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { MobileComingSoon } from "@/components/sections/mobile-coming-soon";
 import {
   Activity,
   ArrowUpRight,
@@ -277,6 +278,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <MobileComingSoon />
 
       <section className="relative overflow-hidden px-6 py-32">
         <div className="kol-circuit-bg absolute inset-0 opacity-20" />
