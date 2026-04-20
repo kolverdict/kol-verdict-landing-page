@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { LandingFaq } from "@/components/sections/landing-faq";
 import { MobileComingSoon } from "@/components/sections/mobile-coming-soon";
+import { RoadmapSection } from "@/components/sections/roadmap";
 import {
   Activity,
   ArrowUpRight,
@@ -394,6 +395,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <RoadmapSection />
 
       <LandingFaq />
 
