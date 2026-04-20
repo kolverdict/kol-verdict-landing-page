@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import { LandingFaq } from "@/components/sections/landing-faq";
 import { MobileComingSoon } from "@/components/sections/mobile-coming-soon";
 import { RoadmapSection } from "@/components/sections/roadmap";
+import { TokenSection } from "@/components/sections/TokenSection";
 import {
   Activity,
   ArrowUpRight,
@@ -78,7 +79,7 @@ const leaderboardItems = [
 ] as const;
 
 const currentYear = 2026;
-const sectionIds = ["top", "how-it-works", "roadmap", "faq"] as const;
+const sectionIds = ["top", "how-it-works", "roadmap", "token", "faq"] as const;
 
 type ActiveSection = (typeof sectionIds)[number];
 
@@ -93,6 +94,7 @@ const navItems: NavItem[] = [
   { label: "Leaderboard", href: LEADERBOARD_URL },
   { label: "How it Works", href: "#how-it-works", sectionId: "how-it-works" },
   { label: "Roadmap", href: "#roadmap", sectionId: "roadmap" },
+  { label: "$KOL", href: "#token", sectionId: "token" },
   { label: "FAQ", href: "#faq", sectionId: "faq" },
 ];
 
@@ -489,6 +491,8 @@ export default function Home() {
       <LandingFaq />
 
       <MobileComingSoon />
+
+      <TokenSection />
 
       <section id="cta" className="px-6 py-32">
         <div className="group relative mx-auto max-w-5xl overflow-hidden rounded-[40px] bg-[#bef264] p-12 text-center text-black md:p-24">
