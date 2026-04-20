@@ -50,10 +50,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/kol-verdict-logo.png", type: "image/png" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/kol-verdict-mark.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/kol-verdict-logo.png", type: "image/png" }],
+    apple: [{ url: "/kol-verdict-mark.png", type: "image/png", sizes: "512x512" }],
   },
 };
 

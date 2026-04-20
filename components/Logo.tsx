@@ -12,9 +12,9 @@ export function Logo({ compact = false }: LogoProps) {
       className="focus-ring group inline-flex items-center gap-2.5 rounded-[8px]"
       aria-label="KOL Verdict home"
     >
-      <span className="relative grid size-8 overflow-hidden rounded-[7px] border border-accent/25 bg-surface-high/80 p-1.5">
+      <span className="relative grid size-8 overflow-hidden rounded-[7px] border border-white/[0.08] bg-white/[0.03] p-1">
         <Image
-          src="/kol-verdict-logo.png"
+          src="/kol-verdict-mark.png"
           alt=""
           width={64}
           height={64}

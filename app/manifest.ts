@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#080b0c",
     icons: [
       {
-        src: "/kol-verdict-logo.png",
+        src: "/kol-verdict-mark.png",
         sizes: "512x512",
         type: "image/png",
       },

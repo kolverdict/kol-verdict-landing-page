@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
@@ -163,8 +164,15 @@ export default function Home() {
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-[#0a0a0a]/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
           <a href="#top" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#bef264]">
-              <Activity className="h-5 w-5 text-black" />
+            <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-1">
+              <Image
+                src="/kol-verdict-mark.png"
+                alt=""
+                width={64}
+                height={64}
+                className="h-full w-full object-contain saturate-125"
+                priority
+              />
             </div>
             <span className="text-xl font-bold tracking-tight">KOL Verdict</span>
           </a>
@@ -505,8 +513,14 @@ export default function Home() {
           <div className="mb-20 grid grid-cols-2 gap-12 md:grid-cols-4 lg:grid-cols-5">
             <div className="col-span-2 lg:col-span-2">
               <div className="mb-6 flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#bef264]">
-                  <Activity className="h-5 w-5 text-black" />
+                <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] p-1">
+                  <Image
+                    src="/kol-verdict-mark.png"
+                    alt=""
+                    width={64}
+                    height={64}
+                    className="h-full w-full object-contain saturate-125"
+                  />
                 </div>
                 <span className="text-xl font-bold tracking-tight">KOL Verdict</span>
               </div>
