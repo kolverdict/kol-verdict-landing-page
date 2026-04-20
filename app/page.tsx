@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { LandingFaq } from "@/components/sections/landing-faq";
 import { MobileComingSoon } from "@/components/sections/mobile-coming-soon";
@@ -77,9 +77,86 @@ const leaderboardItems = [
 ] as const;
 
 const currentYear = 2026;
+const sectionIds = ["top", "how-it-works", "roadmap", "faq"] as const;
+
+type ActiveSection = (typeof sectionIds)[number];
+
+type NavItem = {
+  label: string;
+  href: string;
+  sectionId?: ActiveSection;
+};
+
+const navItems: NavItem[] = [
+  { label: "Explore", href: "#top", sectionId: "top" },
+  { label: "Leaderboard", href: LEADERBOARD_URL },
+  { label: "How it Works", href: "#how-it-works", sectionId: "how-it-works" },
+  { label: "Roadmap", href: "#roadmap", sectionId: "roadmap" },
+  { label: "FAQ", href: "#faq", sectionId: "faq" },
+];
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<ActiveSection>("top");
+
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (!sections.length) {
+      return;
+    }
+
+    const visibleSections = new Map<ActiveSection, number>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id as ActiveSection;
+
+          if (entry.isIntersecting) {
+            visibleSections.set(id, entry.intersectionRatio);
+            return;
+          }
+
+          visibleSections.delete(id);
+        });
+
+        const nextActive = [...visibleSections.entries()].sort((a, b) => {
+          if (b[1] !== a[1]) {
+            return b[1] - a[1];
+          }
+
+          return sectionIds.indexOf(a[0]) - sectionIds.indexOf(b[0]);
+        })[0]?.[0];
+
+        if (nextActive) {
+          setActiveSection(nextActive);
+        }
+      },
+      {
+        rootMargin: "-25% 0px -50% 0px",
+        threshold: [0.15, 0.35, 0.55, 0.75],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  const getNavItemClassName = (item: NavItem, mobile = false) => {
+    const baseClassName = mobile
+      ? "text-lg font-medium transition-colors"
+      : "text-sm font-medium transition-colors";
+    const isActive = item.sectionId ? activeSection === item.sectionId : false;
+
+    return `${baseClassName} ${
+      isActive ? "text-white" : "text-white/60 hover:text-white"
+    }`;
+  };
 
   return (
     <div className="kol-vite-landing min-h-screen bg-[#0a0a0a] text-white selection:bg-[#bef264] selection:text-black">
@@ -93,18 +170,20 @@ export default function Home() {
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
-            <a href="#platform" className="text-sm font-medium text-gray-400 transition-colors hover:text-[#bef264]">
-              Platform
-            </a>
-            <a href={LEADERBOARD_URL} className="text-sm font-medium text-gray-400 transition-colors hover:text-[#bef264]">
-              Leaderboard
-            </a>
-            <a href="#resources" className="text-sm font-medium text-gray-400 transition-colors hover:text-[#bef264]">
-              Resources
-            </a>
-            <a href="#cta" className="text-sm font-medium text-gray-400 transition-colors hover:text-[#bef264]">
-              Pricing
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className={getNavItemClassName(item)}
+                aria-current={
+                  item.sectionId && activeSection === item.sectionId
+                    ? "location"
+                    : undefined
+                }
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
 
           <div className="hidden items-center gap-4 md:flex">
@@ -135,18 +214,21 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col gap-6 border-b border-white/5 bg-[#0a0a0a] px-6 py-8 md:hidden"
           >
-            <a href="#platform" className="text-lg font-medium text-gray-400" onClick={() => setIsMenuOpen(false)}>
-              Platform
-            </a>
-            <a href={LEADERBOARD_URL} className="text-lg font-medium text-gray-400" onClick={() => setIsMenuOpen(false)}>
-              Leaderboard
-            </a>
-            <a href="#resources" className="text-lg font-medium text-gray-400" onClick={() => setIsMenuOpen(false)}>
-              Resources
-            </a>
-            <a href="#cta" className="text-lg font-medium text-gray-400" onClick={() => setIsMenuOpen(false)}>
-              Pricing
-            </a>
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className={getNavItemClassName(item, true)}
+                aria-current={
+                  item.sectionId && activeSection === item.sectionId
+                    ? "location"
+                    : undefined
+                }
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
             <div className="flex flex-col gap-4 border-t border-white/5 pt-4">
               <a href={APP_URL} className="w-full rounded-xl bg-white/5 py-3 text-center font-medium">
                 Log in
@@ -281,7 +363,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden px-6 py-32">
+      <section id="how-it-works" className="relative overflow-hidden px-6 py-32">
         <div className="kol-circuit-bg absolute inset-0 opacity-20" />
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">

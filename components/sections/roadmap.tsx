@@ -161,7 +161,11 @@ function renderTitle(title: string) {
 
 export function RoadmapSection() {
   return (
-    <section aria-labelledby="roadmap-title" className="px-6 py-24 md:py-28">
+    <section
+      id="roadmap"
+      aria-labelledby="roadmap-title"
+      className="px-6 py-24 md:py-28"
+    >
       <div className="mx-auto max-w-5xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2
