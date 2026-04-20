@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
+import { LandingFaq } from "@/components/sections/landing-faq";
 import { MobileComingSoon } from "@/components/sections/mobile-coming-soon";
 import {
   Activity,
@@ -394,6 +395,8 @@ export default function Home() {
         </div>
       </section>
 
+      <LandingFaq />
+
       <section id="cta" className="px-6 py-32">
         <div className="group relative mx-auto max-w-5xl overflow-hidden rounded-[40px] bg-[#bef264] p-12 text-center text-black md:p-24">
           <div className="absolute inset-0 opacity-0 transition-opacity group-hover:bg-black group-hover:opacity-5" />
@@ -445,7 +448,7 @@ export default function Home() {
               <h5 className="mb-6 font-bold">Resources</h5>
               <ul className="space-y-4 text-sm text-gray-500">
                 <li>
-                  <a href="#platform" className="transition-colors hover:text-[#bef264]">
+                  <a href="#faq" className="transition-colors hover:text-[#bef264]">
                     FAQ
                   </a>
                 </li>
