@@ -281,8 +281,6 @@ export default function Home() {
         </div>
       </section>
 
-      <MobileComingSoon />
-
       <section className="relative overflow-hidden px-6 py-32">
         <div className="kol-circuit-bg absolute inset-0 opacity-20" />
         <div className="relative z-10 mx-auto max-w-7xl">
@@ -399,6 +397,8 @@ export default function Home() {
       <RoadmapSection />
 
       <LandingFaq />
+
+      <MobileComingSoon />
 
       <section id="cta" className="px-6 py-32">
         <div className="group relative mx-auto max-w-5xl overflow-hidden rounded-[40px] bg-[#bef264] p-12 text-center text-black md:p-24">
