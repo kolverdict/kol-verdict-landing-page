@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const CONTRACT_ADDRESS = "..........pump";
+const CONTRACT_ADDRESS = "68onDcM677rfzbREgyxdVrGTB8fnDLL4HJM2iNv1pump";
 
 export function TokenSection() {
   const [copied, setCopied] = useState(false);
@@ -38,7 +38,7 @@ export function TokenSection() {
             KOL TOKEN
           </p>
           <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
-            $KOL — aligned incentives for trust
+            $KOL &mdash; aligned incentives for trust
           </h2>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/60">
             $KOL will power governance and reward contributors who surface
