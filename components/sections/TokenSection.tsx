@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const CONTRACT_ADDRESS = "68onDcM677rfzbREgyxdVrGTB8fnDLL4HJM2iNv1pump";
+const CONTRACT_ADDRESS = "..........pump";
 
 export function TokenSection() {
   const [copied, setCopied] = useState(false);
